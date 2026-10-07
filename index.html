@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java Programming Lab - 22 Practicals</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.5;
+  }
+  header {
+    background: #ffffff;
+    color: #000000;
+    padding: 28px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: none;
+  }
+  header h1 { margin: 0 0 5px; font-size: 28px; }
+  header p { margin: 0; color: #000000; }
+  main { width: min(1200px, 92%); margin: 28px auto 60px; }
+  .note {
+    background: #ffffff;
+    border-left: 5px solid #000000;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+  .card {
+    background: #ffffff;
+    margin: 22px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: none;
+    border: 1px solid #000000;
+  }
+  .card-head {
+    padding: 17px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #000000;
+  }
+  .badge {
+    display: inline-block;
+    background: #ffffff;
+    color: #000000;
+    padding: 4px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  h2 { margin: 0; font-size: 20px; }
+  .copy-btn {
+    flex-shrink: 0;
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .copy-btn:hover { background: #ffffff; }
+  .copy-btn.copied { background: #ffffff; }
+  pre.code {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+    background: #ffffff;
+    color: #000000;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.55;
+    tab-size: 4;
+  }
+  footer {
+    text-align: center;
+    color: #000000;
+    padding: 10px 20px 40px;
+  }
+  @media (max-width: 650px) {
+    header h1 { font-size: 22px; }
+    .card-head { align-items: flex-start; flex-direction: column; }
+    .copy-btn { align-self: flex-end; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Java Programming Lab — 22 Practicals</h1>
+  <p>B.Tech CSE • Point-to-point programs • Copy button for every practical</p>
+</header>
+
+<main>
+  <div class="note">
+    <strong>How to use:</strong> Each practical contains only the code needed for the question.
+    Click <strong>Copy Code</strong> at the top-right of any practical to copy the complete Java program.
+    Save each program using the same class name shown in the code (for example, <code>Practical1.java</code>).
+  </div>
+  
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 1</span>
+          <h2>Hello World, Variables, Data Types and Type Casting</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>public class Practical1 {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+
+        int age = 19;
+        double marks = 88.5;
+        char grade = 'A';
+        boolean passed = true;
+
+        // Type casting
+        double number = 25.75;
+        int converted = (int) number;
+
+        System.out.println("Age: " + age);
+        System.out.println("Marks: " + marks);
+        System.out.println("Grade: " + grade);
+        System.out.println("Passed: " + passed);
+        System.out.println("After casting: " + converted);
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 2</span>
+          <h2>Arithmetic, Relational, Logical, Bitwise and Other Operators</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>public class Practical2 {
+    public static void main(String[] args) {
+        int a = 10, b = 3;
+
+        // Arithmetic
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b));
+        System.out.println("Modulus: " + (a % b));
+
+        // Relational
+        System.out.println("a &gt; b: " + (a &gt; b));
+        System.out.println("a == b: " + (a == b));
+
+        // Logical
+        System.out.println("(a &gt; 5 &amp;&amp; b &lt; 5): " + (a &gt; 5 &amp;&amp; b &lt; 5));
+        System.out.println("(a &lt; 5 || b &lt; 5): " + (a &lt; 5 || b &lt; 5));
+
+        // Bitwise
+        System.out.println("a &amp; b: " + (a &amp; b));
+        System.out.println("a | b: " + (a | b));
+        System.out.println("a ^ b: " + (a ^ b));
+        System.out.println("~a: " + (~a));
+
+        // Other
+        int x = 5;
+        System.out.println("Increment: " + (++x));
+        System.out.println("Ternary: " + (a &gt; b ? a : b));
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 3</span>
+          <h2>Conditional Statements: if-else, else-if, nested if-else and switch</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>import java.util.Scanner;
+
+public class Practical3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // a) Even or Odd using if-else
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        if (n % 2 == 0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+
+        // b) Roots of a quadratic equation using else-if
+        System.out.print("Enter a, b and c: ");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        double c = sc.nextDouble();
+
+        double d = b * b - 4 * a * c;
+        if (d &gt; 0) {
+            double r1 = (-b + Math.sqrt(d)) / (2 * a);
+            double r2 = (-b - Math.sqrt(d)) / (2 * a);
+            System.out.println("Roots: " + r1 + ", " + r2);
+        } else if (d == 0) {
+            double r = -b / (2 * a);
+            System.out.println("Equal root: " + r);
+        } else {
+            System.out.println("Complex roots");
+        }
+
+        // c) Largest of three using nested if-else
+        System.out.print("Enter three numbers: ");
+        int p = sc.nextInt(), q = sc.nextInt(), r = sc.nextInt();
+        int largest;
+        if (p &gt; q) {
+            if (p &gt; r) largest = p;
+            else largest = r;
+        } else {
+            if (q &gt; r) largest = q;
+            else largest = r;
+        }
+        System.out.println("Largest: " + largest);
+
+        // d) Week day using switch
+        System.out.print("Enter day number (1-7): ");
+        int day = sc.nextInt();
+        switch (day) {
+            case 1: System.out.println("Monday"); break;
+            case 2: System.out.println("Tuesday"); break;
+            case 3: System.out.println("Wednesday"); break;
+            case 4: System.out.println("Thursday"); break;
+            case 5: System.out.println("Friday"); break;
+            case 6: System.out.println("Saturday"); break;
+            case 7: System.out.println("Sunday"); break;
+            default: System.out.println("Invalid day");
+        }
+
+        sc.close();
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 4</span>
+          <h2>Looping Constructs: while, do-while and for loop</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>import java.util.Scanner;
+
+public class Practical4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // a) Reverse a number using while loop
+        System.out.print("Enter number to reverse: ");
+        int n = sc.nextInt();
+        int temp = n, reverse = 0;
+        while (temp != 0) {
+            reverse = reverse * 10 + temp % 10;
+            temp /= 10;
+        }
+        System.out.println("Reverse: " + reverse);
+
+        // b) Prime number using do-while loop
+        System.out.print("Enter number to check prime: ");
+        int num = sc.nextInt();
+        int i = 2;
+        boolean prime = num &gt; 1;
+        if (num &gt; 1) {
+            do {
+                if (num % i == 0 &amp;&amp; i != num) {
+                    prime = false;
+                    break;
+                }
+                i++;
+            } while (i &lt;= Math.sqrt(num));
+        }
+        System.out.println(prime ? "Prime" : "Not Prime");
+
+        // c) nth Fibonacci term using for loop
+        System.out.print("Enter n: ");
+        int nTerm = sc.nextInt();
+        long first = 0, second = 1, fib = 0;
+        if (nTerm == 1) fib = 0;
+        else if (nTerm == 2) fib = 1;
+        else {
+            for (int j = 3; j &lt;= nTerm; j++) {
+                fib = first + second;
+                first = second;
+                second = fib;
+            }
+        }
+        System.out.println("Fibonacci term: " + (nTerm == 1 ? first : nTerm == 2 ? second : fib));
+
+        sc.close();
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 5</span>
+          <h2>Methods and Recursion</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>public class Practical5 {
+    // Method
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    // Recursive method
+    static int factorial(int n) {
+        if (n &lt;= 1)
+            return 1;
+        return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Sum = " + add(10, 20));
+        System.out.println("Factorial = " + factorial(5));
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 6</span>
+          <h2>Operations on One-Dimensional and Multi-Dimensional Arrays</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>public class Practical6 {
+    public static void main(String[] args) {
+        // One-dimensional array
+        int[] arr = {10, 20, 30, 40, 50};
+        System.out.println("1D Array:");
+        for (int x : arr)
+            System.out.print(x + " ");
+
+        // Multi-dimensional array
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+
+        System.out.println("\n2D Array:");
+        for (int i = 0; i &lt; matrix.length; i++) {
+            for (int j = 0; j &lt; matrix[i].length; j++)
+                System.out.print(matrix[i][j] + " ");
+            System.out.println();
+        }
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 7</span>
+          <h2>1D and 2D Arrays: Maximum/Second Maximum, Sorting Names, Matrix Addition and 3×3 Multiplication</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>import java.util.Arrays;
+
+public class Practical7 {
+    public static void main(String[] args) {
+        // a) Maximum and second maximum without duplicates
+        int[] arr = {10, 50, 20, 50, 30, 40};
+        int max = Integer.MIN_VALUE, second = Integer.MIN_VALUE;
+
+        for (int x : arr) {
+            if (x &gt; max) {
+                second = max;
+                max = x;
+            } else if (x &gt; second &amp;&amp; x != max) {
+                second = x;
+            }
+        }
+        System.out.println("Maximum: " + max);
+        System.out.println("Second Maximum: " + second);
+
+        // b) Sort names in ascending order
+        String[] names = {"Rohit", "Aman", "Karan", "Vikas"};
+        Arrays.sort(names);
+        System.out.println("Sorted names: " + Arrays.toString(names));
+
+        // c) Addition of two matrices
+        int[][] A = {{1, 2}, {3, 4}};
+        int[][] B = {{5, 6}, {7, 8}};
+        int[][] sum = new int[2][2];
+
+        System.out.println("Matrix Addition:");
+        for (int i = 0; i &lt; 2; i++) {
+            for (int j = 0; j &lt; 2; j++) {
+                sum[i][j] = A[i][j] + B[i][j];
+                System.out.print(sum[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // d) 3x3 matrix multiplication
+        int[][] X = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        int[][] Y = {
+            {9, 8, 7},
+            {6, 5, 4},
+            {3, 2, 1}
+        };
+        int[][] product = new int[3][3];
+
+        System.out.println("3x3 Matrix Multiplication:");
+        for (int i = 0; i &lt; 3; i++) {
+            for (int j = 0; j &lt; 3; j++) {
+                for (int k = 0; k &lt; 3; k++)
+                    product[i][j] += X[i][k] * Y[k][j];
+                System.out.print(product[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 8</span>
+          <h2>String Handling using String, StringBuffer and StringBuilder</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>public class Practical8 {
+    public static void main(String[] args) {
+        // String
+        String str = "Java Programming";
+        System.out.println("String: " + str);
+        System.out.println("Length: " + str.length());
+        System.out.println("Uppercase: " + str.toUpperCase());
+
+        // StringBuffer
+        StringBuffer sb = new StringBuffer("Hello");
+        sb.append(" Java");
+        sb.insert(6, "World ");
+        System.out.println("StringBuffer: " + sb);
+
+        // StringBuilder
+        StringBuilder builder = new StringBuilder("Hello");
+        builder.append(" Java");
+        builder.reverse();
+        System.out.println("StringBuilder: " + builder);
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 9</span>
+          <h2>Palindrome String Check</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>import java.util.Scanner;
+
+public class Practical9 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = sc.nextLine();
+
+        String reverse = new StringBuilder(word).reverse().toString();
+
+        if (word.equalsIgnoreCase(reverse))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+
+        sc.close();
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 10</span>
+          <h2>Class, Object and Constructors</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>class Student {
+    int rollNo;
+    String name;
+
+    // Default/parameterized constructor
+    Student(int rollNo, String name) {
+        this.rollNo = rollNo;
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Name: " + name);
+    }
+}
+
+public class Practical10 {
+    public static void main(String[] args) {
+        Student s1 = new Student(101, "Rohit");
+        s1.display();
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 11</span>
+          <h2>Encapsulation using Access Specifiers</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>class Student {
+    private int marks;
+
+    public void setMarks(int marks) {
+        if (marks &gt;= 0 &amp;&amp; marks &lt;= 100)
+            this.marks = marks;
+    }
+
+    public int getMarks() {
+        return marks;
+    }
+}
+
+public class Practical11 {
+    public static void main(String[] args) {
+        Student s = new Student();
+
+        s.setMarks(85);
+        System.out.println("Marks: " + s.getMarks());
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 12</span>
+          <h2>Inheritance: Single, Multilevel, Hierarchical and Hybrid</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+// Single + Multilevel inheritance
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Puppy extends Dog {
+    void play() {
+        System.out.println("Puppy plays");
+    }
+}
+
+// Hierarchical inheritance
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat meows");
+    }
+}
+
+// Hybrid inheritance is achieved using classes + interfaces
+interface Pet {
+    void friendly();
+}
+
+class PetDog extends Dog implements Pet {
+    public void friendly() {
+        System.out.println("Pet dog is friendly");
+    }
+}
+
+public class Practical12 {
+    public static void main(String[] args) {
+        // Single
+        Dog d = new Dog();
+        d.eat();
+        d.bark();
+
+        // Multilevel
+        Puppy p = new Puppy();
+        p.eat();
+        p.bark();
+        p.play();
+
+        // Hierarchical
+        Cat c = new Cat();
+        c.eat();
+        c.meow();
+
+        // Hybrid
+        PetDog pd = new PetDog();
+        pd.eat();
+        pd.bark();
+        pd.friendly();
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 13</span>
+          <h2>this and super Keywords</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>class Parent {
+    int x = 10;
+
+    Parent() {
+        System.out.println("Parent constructor");
+    }
+
+    void display() {
+        System.out.println("Parent display()");
+    }
+}
+
+class Child extends Parent {
+    int x = 20;
+
+    Child() {
+        super();
+    }
+
+    void show() {
+        System.out.println("Child x: " + this.x);
+        System.out.println("Parent x: " + super.x);
+        super.display();
+    }
+}
+
+public class Practical13 {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.show();
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 14</span>
+          <h2>Polymorphism: Method Overloading and Method Overriding</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>class Calculator {
+    // Method overloading
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    // Method overriding
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Practical14 {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println("Two numbers: " + calc.add(10, 20));
+        System.out.println("Three numbers: " + calc.add(10, 20, 30));
+
+        Animal a = new Dog();
+        a.sound();
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 15</span>
+          <h2>Abstraction using Abstract Class and Interfaces (Multiple Inheritance)</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>abstract class Shape {
+    abstract void draw();
+
+    void message() {
+        System.out.println("This is an abstract class");
+    }
+}
+
+interface Printable {
+    void print();
+}
+
+interface Showable {
+    void show();
+}
+
+// Multiple inheritance through interfaces
+class Circle extends Shape implements Printable, Showable {
+    public void draw() {
+        System.out.println("Drawing Circle");
+    }
+
+    public void print() {
+        System.out.println("Printing Circle");
+    }
+
+    public void show() {
+        System.out.println("Showing Circle");
+    }
+}
+
+public class Practical15 {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+
+        c.message();
+        c.draw();
+        c.print();
+        c.show();
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 16</span>
+          <h2>Exception Handling using try-catch-finally</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>public class Practical16 {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 0;
+            int result = a / b;
+            System.out.println(result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception: Cannot divide by zero");
+        } finally {
+            System.out.println("Finally block always executes");
+        }
+
+        System.out.println("Program continues...");
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 17</span>
+          <h2>Exception Handling using try-catch-finally Blocks</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>public class Practical17 {
+    public static void main(String[] args) {
+        try {
+            int[] arr = {10, 20, 30};
+            System.out.println(arr[5]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception: Array index is out of bounds");
+        } finally {
+            System.out.println("Finally block executed");
+        }
+
+        System.out.println("Program continues normally.");
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 18</span>
+          <h2>List Interface using ArrayList and LinkedList</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Practical18 {
+    public static void main(String[] args) {
+        List&lt;String&gt; arrayList = new ArrayList&lt;&gt;();
+        arrayList.add("Java");
+        arrayList.add("Python");
+        arrayList.add("C++");
+        System.out.println("ArrayList: " + arrayList);
+
+        List&lt;String&gt; linkedList = new LinkedList&lt;&gt;();
+        linkedList.add("HTML");
+        linkedList.add("CSS");
+        linkedList.add("JavaScript");
+        System.out.println("LinkedList: " + linkedList);
+
+        System.out.println("First ArrayList element: " + arrayList.get(0));
+        linkedList.remove("CSS");
+        System.out.println("After removal: " + linkedList);
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 19</span>
+          <h2>Set Interface using HashSet and TreeSet</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Practical19 {
+    public static void main(String[] args) {
+        Set&lt;Integer&gt; hashSet = new HashSet&lt;&gt;();
+        hashSet.add(30);
+        hashSet.add(10);
+        hashSet.add(20);
+        hashSet.add(10); // duplicate ignored
+
+        System.out.println("HashSet: " + hashSet);
+
+        Set&lt;Integer&gt; treeSet = new TreeSet&lt;&gt;();
+        treeSet.add(30);
+        treeSet.add(10);
+        treeSet.add(20);
+        treeSet.add(10); // duplicate ignored
+
+        System.out.println("TreeSet: " + treeSet);
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 20</span>
+          <h2>Queue Interface using PriorityQueue and Deque</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>import java.util.Deque;
+import java.util.PriorityQueue;
+import java.util.ArrayDeque;
+import java.util.Queue;
+
+public class Practical20 {
+    public static void main(String[] args) {
+        // PriorityQueue
+        Queue&lt;Integer&gt; priorityQueue = new PriorityQueue&lt;&gt;();
+        priorityQueue.add(30);
+        priorityQueue.add(10);
+        priorityQueue.add(20);
+
+        System.out.println("PriorityQueue: " + priorityQueue);
+        System.out.println("Removed: " + priorityQueue.poll());
+        System.out.println("After removal: " + priorityQueue);
+
+        // Deque
+        Deque&lt;String&gt; deque = new ArrayDeque&lt;&gt;();
+        deque.addFirst("A");
+        deque.addLast("B");
+        deque.addFirst("C");
+
+        System.out.println("Deque: " + deque);
+        System.out.println("First: " + deque.peekFirst());
+        System.out.println("Last: " + deque.peekLast());
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 21</span>
+          <h2>Map Interface using HashMap and LinkedHashMap</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Practical21 {
+    public static void main(String[] args) {
+        // HashMap
+        Map&lt;Integer, String&gt; hashMap = new HashMap&lt;&gt;();
+        hashMap.put(101, "Rohit");
+        hashMap.put(102, "Aman");
+        hashMap.put(103, "Karan");
+
+        System.out.println("HashMap: " + hashMap);
+
+        // LinkedHashMap maintains insertion order
+        Map&lt;Integer, String&gt; linkedHashMap = new LinkedHashMap&lt;&gt;();
+        linkedHashMap.put(101, "Rohit");
+        linkedHashMap.put(102, "Aman");
+        linkedHashMap.put(103, "Karan");
+
+        System.out.println("LinkedHashMap: " + linkedHashMap);
+        System.out.println("Value for key 102: " + linkedHashMap.get(102));
+    }
+}</code></pre>
+    </section>
+    
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <span class="badge">Practical 22</span>
+          <h2>Multithreading using Thread Class and Runnable Interface</h2>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      </div>
+      <pre class="code"><code>class MyThread extends Thread {
+    @Override
+    public void run() {
+        for (int i = 1; i &lt;= 5; i++)
+            System.out.println("Thread class: " + i);
+    }
+}
+
+class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        for (int i = 1; i &lt;= 5; i++)
+            System.out.println("Runnable interface: " + i);
+    }
+}
+
+public class Practical22 {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        Thread t2 = new Thread(new MyRunnable());
+
+        t1.start();
+        t2.start();
+    }
+}</code></pre>
+    </section>
+    
+</main>
+
+<footer>
+  Java Programming Lab — Practicals 1 to 22
+</footer>
+
+<script>
+function copyCode(button) {
+  const code = button.closest('.card').querySelector('code').innerText;
+  navigator.clipboard.writeText(code).then(() => {
+    const oldText = button.innerText;
+    button.innerText = 'Copied!';
+    button.classList.add('copied');
+    setTimeout(() => {
+      button.innerText = oldText;
+      button.classList.remove('copied');
+    }, 1400);
+  }).catch(() => {
+    const range = document.createRange();
+    range.selectNode(button.closest('.card').querySelector('code'));
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('copy');
+    selection.removeAllRanges();
+    button.innerText = 'Copied!';
+    setTimeout(() => button.innerText = 'Copy Code', 1400);
+  });
+}
+</script>
+</body>
+</html>
